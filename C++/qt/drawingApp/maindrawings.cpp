@@ -1,6 +1,7 @@
 #include <QPainter>
 #include <iostream>
 #include "maindrawings.h"
+#include <QGraphicsView>
 
 MainDrawings::MainDrawings(QWidget *parent)
     : QMainWindow(parent)

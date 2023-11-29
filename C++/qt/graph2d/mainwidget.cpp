@@ -73,7 +73,7 @@ void MainWidget::drawPie(QPainter *painter) {
 void MainWidget::drawBessier(QPainter *painter) {
     painter -> setRenderHint(QPainter::Antialiasing, true);
     QPainterPath path;
-    path.moveTo(80, 320);
+    path.moveTo(80, 320);    
     path.cubicTo(200, 80, 320, 80, 480, 320);
     painter -> setPen(QPen(Qt::black, 8));
     painter -> drawPath(path);
