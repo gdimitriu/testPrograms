@@ -26,6 +26,9 @@ private slots:
     void moveItem();
     void replaceItem();
     void updateSelected(int pos);
+    void clearOutputLines();
+    void inorderDisplay();
+    void reverseDisplay();
 };
 
 #endif // LISTAPPLICATION_H

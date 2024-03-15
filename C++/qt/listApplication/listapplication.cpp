@@ -16,6 +16,9 @@ ListApplication::ListApplication(QWidget *parent) :
     connect(ui->deleteButton, SIGNAL(clicked(bool)), this, SLOT(deleteItem()));
     connect(ui->replaceButton, SIGNAL(clicked(bool)), this, SLOT(replaceItem()));
     connect(ui->listWidget, SIGNAL(currentRowChanged(int)), this, SLOT(updateSelected(int)));
+    connect(ui->clearButton, SIGNAL(clicked(bool)), this, SLOT(clearOutputLines()));
+    connect(ui->inorderDisplayButton, SIGNAL(clicked(bool)), this, SLOT(inorderDisplay()));
+    connect(ui->reverseDisplayButton, SIGNAL(clicked(bool)), this, SLOT(reverseDisplay()));
 }
 
 ListApplication::~ListApplication()
@@ -89,4 +92,33 @@ void ListApplication::updateSelected(int pos)
     QListWidgetItem *element = ui->listWidget->currentItem();
     ui->dataLine->setText(element->text());
     repaint();
+}
+
+void ListApplication::clearOutputLines()
+{
+    ui->outputLines->clear();
+    ui->clearButton->clearFocus();
+}
+
+
+void ListApplication::inorderDisplay()
+{
+    int nrOfItems  = ui->listWidget->count();
+    for ( int i = 0; i < nrOfItems; ++i )
+    {
+        ui->outputLines->moveCursor(QTextCursor::End);
+        ui->outputLines->insertPlainText(ui->listWidget->item(i)->text() + '\n');
+    }
+    ui->inorderDisplayButton->clearFocus();
+}
+
+void ListApplication::reverseDisplay()
+{
+    int nrOfItems  = ui->listWidget->count();
+    for ( int i = nrOfItems - 1; i >= 0 ; --i )
+    {
+        ui->outputLines->moveCursor(QTextCursor::End);
+        ui->outputLines->insertPlainText(ui->listWidget->item(i)->text() + '\n');
+    }
+    ui->reverseDisplayButton->clearFocus();
 }
