@@ -3,12 +3,18 @@
 
 #include <QMainWindow>
 #include <QMouseEvent>
+#include <QMenu>
+#include <QAction>
+#include <QLinkedList>
 
 class MainDrawings : public QMainWindow
 {
     Q_OBJECT
 public slots:
    void paintEvent(QPaintEvent * event);
+private slots:
+   void openFile();
+   void saveAs();
 public:
     MainDrawings(QWidget *parent = 0);
     ~MainDrawings();
@@ -17,10 +23,14 @@ protected:
     void mouseMoveEvent(QMouseEvent *event);
     void mouseReleaseEvent(QMouseEvent *event);
 private:
-    QList<QList<QPoint> *> *pointsLists;
+    void createMenu();
+    QLinkedList<QLinkedList<QPoint> *> *pointsLists;
     QPoint lastPos;
-    QList<QPoint> *currentDrawing;
+    QLinkedList<QPoint> *currentDrawing;
     bool isTracking;
+    QAction *openFileAction;
+    QAction *saveAsAction;
+    QMenu *fileMenu;
 };
 
 #endif // MAINDRAWINGS_H
