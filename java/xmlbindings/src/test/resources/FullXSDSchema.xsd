@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.example.org/FullXSDSchema" xmlns:tns="http://www.example.org/FullXSDSchema" elementFormDefault="qualified">
+	<xs:element name = "phisicalPerson">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name = "user" type = "tns:userDefinition" minOccurs="1" maxOccurs="1"/>
+				<xs:element name = "marchandise" type ="xs:string" minOccurs="1" maxOccurs="unbounded"/>
+				<xs:element name = "numbers" type = "xs:nonNegativeInteger" minOccurs="1" maxOccurs="1"/>
+				<xs:element name = "payment" type = "tns:allowedPayment" minOccurs="1" maxOccurs="1"/>
+			</xs:sequence> 
+		</xs:complexType>
+	</xs:element>
+	
+	<xs:element name = "juridicalPerson">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name = "company" type ="tns:companyDef" minOccurs="1" maxOccurs="1"/>
+				<xs:element name = "marchandise" type ="xs:string" minOccurs="1" maxOccurs="unbounded"/>
+				<xs:element name = "numbers" type = "xs:nonNegativeInteger" minOccurs="1" maxOccurs="1"/>
+				<xs:element name = "payment" type = "tns:allowedPayment" minOccurs="1" maxOccurs="1"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	
+	<xs:complexType name="userDefinition">
+		<xs:sequence>
+			<xs:element name = "name" type = "xs:string" minOccurs="1"/>
+			<xs:element name = "address" type = "tns:addressDef" minOccurs="1" maxOccurs="unbounded">				
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	
+	<xs:complexType name="companyDef">
+		<xs:sequence>
+			<xs:element name = "name" type = "xs:string" minOccurs="1" maxOccurs="1"/>
+			<xs:element name = "addresses" minOccurs="1" maxOccurs="unbounded">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="address" type="tns:addressDef" minOccurs="1" maxOccurs="1"/>
+						<xs:element name="contactPerson" minOccurs="1" maxOccurs="unbounded">
+							<xs:complexType>
+							 	<xs:simpleContent>
+							 		<xs:extension base="xs:string">
+										<xs:attribute name = "telephone" type = "xs:string"/>
+										<xs:attribute name = "type" type ="tns:contactTypeDef"/> 
+									</xs:extension>
+								</xs:simpleContent>
+							</xs:complexType>
+						</xs:element>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element> 
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:simpleType name = "contactTypeDef">
+		<xs:restriction base = "xs:string">
+			<xs:enumeration value = "sell"/>
+			<xs:enumeration value = "technical"/>
+			<xs:enumeration value = "CEO"/>
+		</xs:restriction>
+	</xs:simpleType>
+	
+	<xs:complexType name="addressDef">
+		<xs:sequence>
+			<xs:element name="str" type="xs:string" />
+			<xs:element name="state">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:pattern value="[a-zA-Z]{2}" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="country" type="tns:allowedCountry" minOccurs="1" maxOccurs="1" />
+		</xs:sequence>
+	</xs:complexType>
+	
+	<xs:simpleType name = "allowedCountry">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="CANADA"/>
+			<xs:enumeration value="USA"/>
+			<xs:enumeration value="MEXICO"/>
+		</xs:restriction>
+	</xs:simpleType>
+	
+	<xs:simpleType name = "allowedPayment">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="VISA"/>
+			<xs:enumeration value="AMERICAN EXPRESS"/>
+		</xs:restriction>
+	</xs:simpleType>	
+</xs:schema>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns:xs="http://www.w3.org/2001/XMLSchema" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xmlns="http://www.example.org/devs_definition" 
+	xsi:schemaLocation="http://www.example.org/devs_definition devs_definition.xsd ">
+	
+	<processor>
+		<name Id = "proc1">first processor</name>
+	</processor>
+	<network>
+		<name Id="net1">first network</name>
+	</network>
+	<connections>
+		<name>0</name>
+		<parent>net1</parent>
+	</connections>
+</definitions>

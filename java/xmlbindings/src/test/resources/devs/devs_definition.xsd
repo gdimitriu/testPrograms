@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+    Copyright (c) 2017 Gabriel Dimitriu All rights reserved.
+	DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS FILE HEADER.
+
+    This file is part of poc_xmlbindings project.
+
+    poc_xmlbindings is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    poc_xmlbindings is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with poc_xmlbindings.  If not, see <http://www.gnu.org/licenses/>. 
+ -->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" 
+	targetNamespace="http://www.example.org/devs_definition" 
+	xmlns="http://www.example.org/devs_definition" 
+	elementFormDefault="qualified">
+
+<xs:element name = "definitions">
+	<xs:complexType>
+		<xs:sequence>
+			<xs:element name = "processor" type = "processorDefinition" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element name = "network" type = "networkDefinition" minOccurs = "1" maxOccurs="unbounded"/>
+			<xs:element name = "connections" type = "connectionPointDefinition" minOccurs="1" maxOccurs="unbounded"/>
+		</xs:sequence>		
+	</xs:complexType>
+	<xs:key name="instanceId">
+		<xs:selector xpath="processor/name|network/name"/>
+		<xs:field xpath="@Id"/>
+	</xs:key>
+</xs:element>
+
+<xs:complexType name = "processorDefinition">
+	<xs:complexContent>
+		<xs:extension base = "baseConnectableDefinition">
+			<xs:sequence>
+							
+			</xs:sequence>
+		</xs:extension>
+	</xs:complexContent>
+</xs:complexType>
+
+<xs:complexType name = "networkDefinition">
+	<xs:complexContent>
+		<xs:extension base = "baseConnectableDefinition">
+			<xs:sequence>
+			</xs:sequence>
+		</xs:extension>
+	</xs:complexContent>
+</xs:complexType>
+
+<xs:complexType name = "baseConnectableDefinition">
+	<xs:sequence>
+		<xs:element name = "name" minOccurs="1" maxOccurs="1">
+			<xs:complexType>
+				<xs:simpleContent>
+					<xs:extension base = "xs:string">
+						<xs:attribute name = "Id" type = "xs:string" use="required"/>
+					</xs:extension>
+				</xs:simpleContent>
+			</xs:complexType>
+		</xs:element>
+	</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="connectionPointDefinition">
+	<xs:sequence>
+		<xs:element name = "name" type = "xs:string" minOccurs="1" maxOccurs="1"/>
+		<xs:element name = "parent" minOccurs ="1" maxOccurs="1">
+			<xs:keyref name="parentId" refer="instanceId">
+				<xs:selector xpath="name"/>
+				<xs:field xpath="@Id"/>
+			</xs:keyref>
+		</xs:element>
+	</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name = "wireDefinition">
+	<xs:sequence>
+		<xs:element name = "inputs" type = "connectionPointDefinition" minOccurs="0" maxOccurs="unbounded"/>
+		<xs:element name = "outputs" type = "connectionPointDefinition" minOccurs="0" maxOccurs="unbounded"/>
+	</xs:sequence>
+</xs:complexType>
+
+</xs:schema>
