@@ -1,0 +1,12 @@
+http://www.datanucleus.org/products/accessplatform_4_1/extensions/classloader_resolver.html
+
+http://www.datanucleus.org/products/accessplatform_4_2/extensions/index.html
+
+http://www.datanucleus.org/products/accessplatform/extensions/extensions.html
+
+OBS:
+The ChappyClassLoaderResolver should implement those characteristics and 
+the JavaClassLoaderSimple should be returned by a factory with the behavioral:
+- singleton to deliver the same class loader by name (compile, runtime etc).
+- singleton which is called from jar.
+- the ChappyClassLoaderResolver should be part a new jar as extension point.

@@ -1,0 +1,6 @@
+/target/
+.directory
+.idea/
+*.iml
+*.class
+*.jar
