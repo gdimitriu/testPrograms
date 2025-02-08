@@ -1,0 +1,11 @@
+		Problems for algorithms and C language
+1)Define and implement the function for operation with polinoms in vector allocation. Operation are: substitution, multiplication, division.
+2)Implement a program to order a list of object (identification of a car:number,type and color) and after ordering print it.
+3)Implement a program which reads a vector of integer values, make the multiplicaiton between all alement of the vector and find the number of realization of each element.
+4)Implentation of a crowd of bidiomensional points using a double link list. Order of the elements is by distance from the origin point. Define and implement the following operations: input an element into crowd, reunion, intersection and diference of two crowds.
+5)Create a FIFO which has element charcterizated by a integer not negative (needs from a resource) and it services by the following principle: if the number is lower than the constant of the resource it leaves the system and if is greater than the constant it get back to the queue with the value: number-constant.
+6)Implement the sorting of a vector with bubble, insertion and selection.
+7)Implement the operations with recursive and not recursive functions for an integer tree. Operation are: cross left-root-right, root-left-right, left-right-root and also determination or numbers of leaves.
+8)Imlement of an integer crowd without duplicates with a binary tree. Define an implement the following operations: insertion into a specific crowd, reunion, intersection and diference of a two crowds (trees).
+9)Implement Diskstra and Roy-Floyd for a digraph given it's adiacence matrix.
+10)Implement the transformation of a digraph from it's adiacence matrix to the adicence list and find with Merimnt if there are some loops.

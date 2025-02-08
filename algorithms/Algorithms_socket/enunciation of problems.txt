@@ -1,0 +1,8 @@
+			Problems for Algorithms and Socket in C and JAVA
+CDS1)Write a server and a client. Client generate random 10 number in 0-9 and sent to the server. The server find the rate of apparition of each number, the result is sent back to the client who print it. Implementation in C for UNIX.
+CDS2)Write a server and a client. The client send a string. The server replace the code $ with IP adress and the port. Implementation in C for UNIX.
+CDS3)Rewrite the server from 2 with pth threads. Implementation in C for UNIX.
+CDS4)Rewrite the server form 2 with posix threads. Implementation in C for UNIX.
+CDS5)Write a server and a client. The client send a string of lower characters. The server convert the received string into upper characters and send back to the client. Implementation in C for UNIX.
+JDS1)Write a client in JAVA who communicate with a server from the problem CDS2.
+JDS2)Write in JAVA the server for the problem CDS2.

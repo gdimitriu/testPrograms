@@ -1,0 +1,12 @@
+		Problems for Algorithms and C++
+1)Implement a class which make the summ of two numbers. You must use special functions for adding, printing and inputs. From this calss yu  must derivate other class which make the product.
+2)Implement a class implement dinamic queue, each element of the queue will be a derivated class from another class which has one private integer.
+3)Implement a program who read from keyboard a dinamic alocation vector of numbers, and after that it determine the numbers of realization of each number. The number of realization will be stored into a dinamic simple link list, dinamic alocated.
+4)Implement a program who read from keyboard a dinamic alocation vector of numbers, and after that it determine the numbers of realization of each number. The number of realization will be stored into a dinamic simple link list, dinamic alocated. The list will be upward ordered.
+5)Implement a program who read from keyboard a dinamic alocation vector of numbers, and after that it determine the numbers of realization of each number. The number of realization will be stored into a dinamic simple link list, dinamic alocated. The list will be downward ordered.
+6)Write a function who reate a list simple linked in which, every node, near the adress information, will has student date: numele char[20];prenumele:char[20];a real vector which hold the realization of the student, and a real number which hold the average of the student.
+a)write a fucntion which return the overall average of the students from the list.
+b)write a function who sort downward the elements of the list after the average of the student.
+c)write a function who list the students which have the average over a specific average.
+d)write a function who list the student alowed to a contest which has only k places.
+7)Implement a program in C++ with clases who find if a graph is a tree.

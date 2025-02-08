@@ -1,0 +1,16 @@
+		Problems for Algorithms and Socket in JAVA
+JDS1)Write a server and a client. The server send "please enter the password" and client send the password. The server verify the password and send an answord ("Accepted" or "Denied").
+JDS2)Write a server and a client. The client send a string of lower characters. The server convert the received string into upper characters and send back to the client. Use bytes for transfer.
+JDS3)Write a server and a client. The client send a string. The server replace the code $ with IP adress and the port.
+JDS4)Write a server and a client. Client generate random 10 number in 0-9 and sent to the server. The server find the rate of apparition of each number, the result is sent back to the client who print it. 
+JDS5)Write a server and a client. The client send a string of lower characters. The server convert the received string into upper characters and send back to the client. Use string for transfer.
+JPC1)Write the reduction of a vector in JAVA with n threads.
+JPC2)Write the matrix multiplication using threads.
+JG1)Write an AWT program which has 1 button who increment one value.
+JG2)Write an AWT program which has 1 field where you input a password.
+JG3)Write in AWT a program which has 1 field where you input a string with lower characters and another field where is printed the string with upper characters.
+JG4)Write in AWT a program which has 3 field in which you input two float numbers and an operator and another field where the result is printed.
+JG5)Rewrite the JG3 with applet.
+JDSG1)Write an AWT client for the problem JDS5.
+JDSG2)Rewrite th JDSG1 with applet.
+JDSG2)Write an AWT-applet client for the problem JDS5.
