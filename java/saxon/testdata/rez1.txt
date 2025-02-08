@@ -1,0 +1,1 @@
+/home/gaby/public-git/learning/xml/xslt/chapter4/input3.xml /home/gaby/public-git/learning/xml/xslt/chapter4/input3_1.xsl /home/gaby/public-git/learning/xml/xslt/chapter4/out.xml

@@ -1,0 +1,12 @@
+<<-->> [5]: xsl:template  {match=/}
+<<-->> [6]: xsl:apply-templates  {select=processing}
+-->> [2]: processing  {}
+<<-->> [9]: xsl:template  {match=processing}
+<<-->> [10]: processing  {}
+<<-->> [11]: first  {}
+<<-->> [12]: xsl:value-of  {select=(second,'')[. ne ''][1]}
+<<-->> [14]: second  {}
+<<-->> [15]: xsl:value-of  {select=(first,'')[. ne ''][1]}
+<<-->> [17]: number  {}
+<<-->> [18]: xsl:value-of  {select=(number,'')[. ne ''][1]}
+<<-- [2]: processing 
