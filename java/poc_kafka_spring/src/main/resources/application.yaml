@@ -1,0 +1,8 @@
+kafka:
+  bootstrapAddress: localhost:9093
+spring:
+  kafka:
+    consumer:
+      group-id: myGroupId
+server:
+  port: 8080
