@@ -1,0 +1,47 @@
+activate the webconsole:
+feature:install http
+feature:install felix-http
+feature:install webconsole
+http://localhost:8181/system/console
+
+JMX:
+service:jmx:rmi://host:${rmiServerPort}/jndi/rmi://host:${rmiRegistryPort}/${karaf-instance-name}
+
+install as service:
+wrapper:install –s AUTO_START –n Karaf3 –D "Apache Karaf Cookbook"
+ln –s /Path/To/apache-karaf-3.0.0/bin/Karaf3-service /etc/init.d
+update-rc.d Karaf3-service defaults
+/etc/init.d/Karaf3-service start
+/etc/init.d/Karaf3-service stop
+
+enable HA:
+etc/system.properties
+##
+## Sample lock configuration
+##
+karaf.lock=true
+karaf.lock.class=org.apache.karaf.main.lock.SimpleFileLock
+# specify path to lock directory
+karaf.lock.dir=[PathToLockFileDirectory]
+karaf.lock.delay=10
+
+or using database
+karaf.lock=true
+karaf.lock.class=org.apache.karaf.main.DefaultJDBCLock
+karaf.lock.delay=10
+karaf.lock.jdbc.url=jdbc:derby://dbserver:1527/sample
+karaf.lock.jdbc.driver=org.apache.derby.jdbc.ClientDriver
+karaf.lock.jdbc.user=user
+karaf.lock.jdbc.password=password
+karaf.lock.jdbc.table=KARAF_LOCK
+karaf.lock.jdbc.clustername=karaf
+karaf.lock.jdbc.timeout=30
+
+feature:repo-add mvn:io.gdimitriu.poc_karaf/features-file/1.0.0-SNAPSHOT/xml/features
+feature:repo-add mvn:io.gdimitriu.poc_karaf/cxf_features/1.0.0-SNAPSHOT/xml/features
+feature:repo-add cxf 3.3.11
+feature:install cxf
+feature:install jersey
+install -s mvn:org.webjars/swagger-ui/3.25.0
+feature:install cxf-rs-description-openapi-v3
+feature:install cxf-rs-description-swagger2
