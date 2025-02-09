@@ -1,0 +1,18 @@
+		Probleme limbaje de programare secventiale (PS)
+
+1) Implementare cautarea unui cuvint intr-un string.
+
+2)Se da un arbore binar ordonat. Sa se implementeze si sa se apeleze
+functiile de: inserare, parcurgeri RSD,SRD,SDR, stergerea unui element din
+arbore si aflarea adincimii arborelui.
+
+3)Se da un arbore binar ordonat. Sa se implementeze si sa se apeleze
+functiile de: inserare si parcurgere SRD in mod recursiv.
+
+4)Sa se rezolve problema damelor cu ajutorul algoritmului backtracking recursiv. Inca nu merge !!!
+
+5)Sa se rezolve problema colorarii a unei harti cu n state cu m culori, frontierele sunt prezente sub forma de arce de curbe. Cazul m>=4.
+
+6)Se da un arbore oarecare intr-un fisier in format text, nodurile sunt numere unice. Sa se incarce acest arbore in memorie si sa se faca echivalentul lui binar. Sa se realize parcurgere RSD in ambele cazuri.
+
+7)Se da un arbore oarecare intr-un fisier in format text, nodurile sunt numere unice. Sa se incarce acest arbore in memorie sub forma unui arbore fiu,frate,tata. Sa se faca parcurgerea lui in RSD.
