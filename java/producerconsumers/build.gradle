@@ -1,0 +1,17 @@
+plugins {
+    id 'java'
+}
+
+group 'poc_kafka'
+version '1.0-SNAPSHOT'
+
+sourceCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation group: 'org.apache.kafka', name: 'kafka-clients', version: '3.7.1'
+    implementation group: 'org.slf4j', name: 'slf4j-simple', version: '1.7.30'
+}
